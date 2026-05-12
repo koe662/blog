@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>远岸博客</title>
+    <link>https://koe662.github.io/blog/</link>
+    <description>技术、写作与设计记录</description>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 12 May 2026 00:00:00 +0800</lastBuildDate>
+
+    <item>
+      <title>博客上线后，怎样才能被搜索引擎收录</title>
+      <link>https://koe662.github.io/blog/posts/get-indexed.html</link>
+      <guid>https://koe662.github.io/blog/posts/get-indexed.html</guid>
+      <pubDate>Tue, 12 May 2026 00:00:00 +0800</pubDate>
+      <description>说明博客被搜索引擎收录的关键步骤。</description>
+    </item>
+
+    <item>
+      <title>为什么我先给你做的是静态博客，而不是复杂后台</title>
+      <link>https://koe662.github.io/blog/posts/static-stack.html</link>
+      <guid>https://koe662.github.io/blog/posts/static-stack.html</guid>
+      <pubDate>Sun, 10 May 2026 00:00:00 +0800</pubDate>
+      <description>说明个人博客为什么适合从静态站开始。</description>
+    </item>
+
+    <item>
+      <title>博客页面应该优先服务阅读，而不是展示组件</title>
+      <link>https://koe662.github.io/blog/posts/reading-experience.html</link>
+      <guid>https://koe662.github.io/blog/posts/reading-experience.html</guid>
+      <pubDate>Fri, 08 May 2026 00:00:00 +0800</pubDate>
+      <description>解释博客的视觉重点应该放在阅读体验和内容层次。</description>
+    </item>
+  </channel>
+</rss>

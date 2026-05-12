@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>远岸博客 | 技术、写作与设计记录</title>
+  <meta name="description" content="远岸博客是一个可部署、可被搜索引擎收录的静态博客模板，适合发布技术文章、项目记录和长期写作内容。">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="远岸博客">
+  <meta name="theme-color" content="#f3efe7">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="远岸博客 | 技术、写作与设计记录">
+  <meta property="og:description" content="一个适合上线到公开域名、并持续发布内容的静态博客起点。">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:site_name" content="远岸博客">
+  <meta property="og:url" content="https://koe662.github.io/blog/">
+  <meta property="og:image" content="https://koe662.github.io/blog/assets/og-cover.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="远岸博客 | 技术、写作与设计记录">
+  <meta name="twitter:description" content="一个适合上线到公开域名、并持续发布内容的静态博客起点。">
+  <meta name="twitter:image" content="https://koe662.github.io/blog/assets/og-cover.svg">
+  <link rel="canonical" href="https://koe662.github.io/blog/">
+  <link rel="alternate" type="application/rss+xml" title="远岸博客 RSS" href="feed.xml">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "远岸博客",
+      "url": "https://koe662.github.io/blog/",
+      "description": "一个适合上线到公开域名、并持续发布内容的静态博客起点。",
+      "inLanguage": "zh-CN",
+      "publisher": {
+        "@type": "Person",
+        "name": "远岸博客"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html">远岸博客</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        菜单
+      </button>
+      <nav id="site-nav" class="site-nav">
+        <a href="#posts">文章</a>
+        <a href="#notes">笔记</a>
+        <a href="#about">关于</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Public Blog Starter</p>
+          <h1>这是一个可以真正上线的博客起点。</h1>
+          <p class="hero-text">
+            它不是只在本地看的模板，而是面向公开访问的静态博客结构。你可以把它部署到 GitHub Pages、Netlify 或 Vercel，再提交到 Google Search Console 和 Bing Webmaster Tools，让别人通过搜索找到你。
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#posts">查看文章</a>
+            <a class="button button-secondary" href="posts/get-indexed.html">先看收录说明</a>
+          </div>
+        </div>
+        <aside class="hero-panel reveal">
+          <p class="panel-label">上线条件</p>
+          <ul class="status-list">
+            <li>公开域名或托管地址</li>
+            <li>站点地图与 robots</li>
+            <li>持续更新的原创内容</li>
+          </ul>
+          <p class="panel-footnote">当前已按 GitHub Pages 项目地址配置，可直接部署到 `koe662.github.io/blog/`。</p>
+        </aside>
+      </section>
+
+      <section id="posts" class="section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Recent Posts</p>
+          <h2>近期文章</h2>
+        </div>
+        <div class="post-grid">
+          <article class="post-card reveal">
+            <p class="post-meta">2026.05.12 · 部署 / SEO</p>
+            <h3><a href="posts/get-indexed.html">博客上线后，怎样才能被搜索引擎收录</a></h3>
+            <p>
+              公开访问、站点地图、搜索平台验证、内容质量和收录等待周期，这几个环节缺一不可。
+            </p>
+            <a class="text-link" href="posts/get-indexed.html">继续阅读</a>
+          </article>
+
+          <article class="post-card reveal">
+            <p class="post-meta">2026.05.10 · 前端 / 架构</p>
+            <h3><a href="posts/static-stack.html">为什么我先给你做的是静态博客，而不是复杂后台</a></h3>
+            <p>
+              对个人博客来说，最先要解决的是发布与部署成本，而不是功能堆叠。静态结构更适合起步。
+            </p>
+            <a class="text-link" href="posts/static-stack.html">继续阅读</a>
+          </article>
+
+          <article class="post-card reveal">
+            <p class="post-meta">2026.05.08 · 设计 / 写作</p>
+            <h3><a href="posts/reading-experience.html">博客页面应该优先服务阅读，而不是展示组件</a></h3>
+            <p>
+              留白、标题、正文宽度和配色，会直接影响读者是否愿意停下来把文章看完。
+            </p>
+            <a class="text-link" href="posts/reading-experience.html">继续阅读</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="notes" class="section notes-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Notes</p>
+          <h2>站点笔记</h2>
+        </div>
+        <div class="notes-timeline">
+          <article class="note-item reveal">
+            <span class="note-date">05.12</span>
+            <p>已加入 `robots.txt`、`sitemap.xml`、RSS 和结构化数据，便于搜索引擎抓取。</p>
+          </article>
+          <article class="note-item reveal">
+            <span class="note-date">05.12</span>
+            <p>所有页面都补了 `title`、`description`、`canonical` 和 Open Graph 标签。</p>
+          </article>
+          <article class="note-item reveal">
+            <span class="note-date">05.12</span>
+            <p>如果你接下来绑定自定义域名并提交站点地图，这个博客就进入可收录状态。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" class="section about-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">About</p>
+          <h2>这套博客现在能做什么</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-card reveal">
+            <h3>可部署</h3>
+            <p>它是纯静态站，没有构建依赖，上传到任何静态托管服务都能直接访问。</p>
+          </div>
+          <div class="about-card reveal">
+            <h3>可被搜索</h3>
+            <p>它已经具备被搜索引擎理解和抓取的基础条件，但还需要你替换域名并正式发布到公网。</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="current-year"></span> 远岸博客</p>
+      <p>Static site ready for public deployment.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
