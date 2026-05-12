@@ -7,6 +7,7 @@ const reactiveCard = document.querySelector(".floating-card");
 const cursorAura = document.querySelector(".cursor-aura");
 const cursorTrail = document.querySelector(".cursor-trail");
 const particleCanvas = document.querySelector(".particle-canvas");
+const petEyes = document.querySelectorAll(".pet-eye");
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 if (yearTarget) {
@@ -53,6 +54,34 @@ if (!reducedMotion.matches && parallaxItems.length > 0) {
 
       frame = 0;
     });
+  });
+}
+
+if (!reducedMotion.matches && petEyes.length > 0) {
+  const moveEyes = (clientX, clientY) => {
+    petEyes.forEach((eye) => {
+      const pupil = eye.querySelector(".pet-pupil");
+      if (!pupil) {
+        return;
+      }
+
+      const rect = eye.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      const dx = clientX - centerX;
+      const dy = clientY - centerY;
+      const angle = Math.atan2(dy, dx);
+      const distance = Math.min(5, Math.hypot(dx, dy) * 0.04);
+      const offsetX = Math.cos(angle) * distance;
+      const offsetY = Math.sin(angle) * distance;
+
+      pupil.style.transform =
+        `translate(calc(-50% + ${offsetX}px), calc(-50% + ${offsetY}px))`;
+    });
+  };
+
+  window.addEventListener("pointermove", (event) => {
+    moveEyes(event.clientX, event.clientY);
   });
 }
 
@@ -137,10 +166,18 @@ if (!reducedMotion.matches && particleCanvas) {
         continue;
       }
 
+      context.save();
+      context.translate(particle.x, particle.y);
+      context.rotate((particle.life * 6) + particle.size);
+      context.fillStyle = `rgba(${particle.hue}, ${particle.life * 0.65})`;
       context.beginPath();
-      context.fillStyle = `rgba(${particle.hue}, ${particle.life * 0.7})`;
-      context.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+      context.moveTo(0, -particle.size * 1.8);
+      context.lineTo(particle.size * 0.9, 0);
+      context.lineTo(0, particle.size * 1.8);
+      context.lineTo(-particle.size * 0.9, 0);
+      context.closePath();
       context.fill();
+      context.restore();
     }
 
     window.requestAnimationFrame(renderParticles);
@@ -149,8 +186,9 @@ if (!reducedMotion.matches && particleCanvas) {
   window.addEventListener("resize", resizeCanvas);
   window.addEventListener("pointermove", (event) => {
     spawnParticle(event.clientX, event.clientY);
-    if (Math.random() > 0.4) {
-      spawnParticle(event.clientX + (Math.random() - 0.5) * 16, event.clientY + (Math.random() - 0.5) * 16);
+    spawnParticle(event.clientX + (Math.random() - 0.5) * 12, event.clientY + (Math.random() - 0.5) * 12);
+    if (Math.random() > 0.15) {
+      spawnParticle(event.clientX + (Math.random() - 0.5) * 22, event.clientY + (Math.random() - 0.5) * 22);
     }
   });
 
