@@ -1,7 +1,7 @@
 {
-  "name": "远岸博客",
-  "short_name": "远岸博客",
-  "description": "技术、写作与设计记录",
+  "name": "Levis1",
+  "short_name": "Levis1",
+  "description": "Levis1 的个人博客",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#f3efe7",

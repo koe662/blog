@@ -10,7 +10,7 @@
   <circle cx="1020" cy="120" r="140" fill="#70856c" fill-opacity="0.18"/>
   <rect x="110" y="120" width="980" height="390" rx="32" fill="#fbf7f0" fill-opacity="0.84" stroke="#1f2430" stroke-opacity="0.16"/>
   <text x="170" y="250" fill="#a64b2a" font-family="Georgia, 'Times New Roman', serif" font-size="28" letter-spacing="4">PUBLIC BLOG STARTER</text>
-  <text x="170" y="340" fill="#1f2430" font-family="Georgia, 'Times New Roman', serif" font-size="68" font-weight="700">远岸博客</text>
+  <text x="170" y="340" fill="#1f2430" font-family="Georgia, 'Times New Roman', serif" font-size="68" font-weight="700">Levis1</text>
   <text x="170" y="415" fill="#5b5f68" font-family="'Segoe UI', sans-serif" font-size="30">技术、写作与设计记录</text>
   <text x="170" y="470" fill="#5b5f68" font-family="'Segoe UI', sans-serif" font-size="24">部署到公开域名后，可被搜索引擎抓取和收录</text>
 </svg>
