@@ -5,7 +5,7 @@ const revealItems = document.querySelectorAll(".reveal");
 const parallaxItems = document.querySelectorAll(".home-copy");
 const reactiveCard = document.querySelector(".floating-card");
 const particleCanvas = document.querySelector(".particle-canvas");
-const characterEyes = document.querySelectorAll(".character-eye");
+const eyeOverlays = document.querySelectorAll(".character-eye-overlay");
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 if (yearTarget) {
@@ -55,26 +55,44 @@ if (!reducedMotion.matches && parallaxItems.length > 0) {
   });
 }
 
-if (!reducedMotion.matches && characterEyes.length > 0) {
+if (!reducedMotion.matches && eyeOverlays.length > 0) {
   const moveEyes = (clientX, clientY) => {
-    characterEyes.forEach((eye) => {
+    eyeOverlays.forEach((eye) => {
+      const pupil = eye.querySelector(".character-eye-dot");
+      if (!pupil) {
+        return;
+      }
+
       const rect = eye.getBoundingClientRect();
       const centerX = rect.left + rect.width / 2;
       const centerY = rect.top + rect.height / 2;
       const dx = clientX - centerX;
       const dy = clientY - centerY;
       const angle = Math.atan2(dy, dx);
-      const distance = Math.min(5, Math.hypot(dx, dy) * 0.04);
+      const distance = Math.min(4, Math.hypot(dx, dy) * 0.035);
       const offsetX = Math.cos(angle) * distance;
       const offsetY = Math.sin(angle) * distance;
 
-      eye.setAttribute("transform", `translate(${offsetX} ${offsetY})`);
+      pupil.style.transform =
+        `translate(calc(-50% + ${offsetX}px), calc(-50% + ${offsetY}px))`;
     });
   };
 
   window.addEventListener("pointermove", (event) => {
     moveEyes(event.clientX, event.clientY);
   });
+
+  const blink = () => {
+    eyeOverlays.forEach((eye) => eye.classList.add("is-blinking"));
+    window.setTimeout(() => {
+      eyeOverlays.forEach((eye) => eye.classList.remove("is-blinking"));
+    }, 160);
+
+    const nextBlink = 2200 + Math.random() * 1800;
+    window.setTimeout(blink, nextBlink);
+  };
+
+  window.setTimeout(blink, 1500);
 }
 
 if (!reducedMotion.matches && particleCanvas) {
