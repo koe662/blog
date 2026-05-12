@@ -3,34 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Levis1 | 个人文章站</title>
-  <meta name="description" content="Levis1 的个人文章站，记录技术、思考、项目和日常写下的文字。">
+  <title>Levis blog</title>
+  <meta name="description" content="Levis blog，按 Forensics、Crypto、RE 分类整理文章与记录。">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Levis1">
   <meta name="theme-color" content="#fcfcfd">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Levis1 | 个人文章站">
-  <meta property="og:description" content="Levis1 的个人文章站，记录技术、思考、项目和日常写下的文字。">
+  <meta property="og:title" content="Levis blog">
+  <meta property="og:description" content="Levis blog，按 Forensics、Crypto、RE 分类整理文章与记录。">
   <meta property="og:locale" content="zh_CN">
-  <meta property="og:site_name" content="Levis1">
+  <meta property="og:site_name" content="Levis blog">
   <meta property="og:url" content="https://koe662.github.io/blog/">
   <meta property="og:image" content="https://koe662.github.io/blog/assets/og-cover.svg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Levis1 | 个人文章站">
-  <meta name="twitter:description" content="Levis1 的个人文章站，记录技术、思考、项目和日常写下的文字。">
+  <meta name="twitter:title" content="Levis blog">
+  <meta name="twitter:description" content="Levis blog，按 Forensics、Crypto、RE 分类整理文章与记录。">
   <meta name="twitter:image" content="https://koe662.github.io/blog/assets/og-cover.svg">
   <link rel="canonical" href="https://koe662.github.io/blog/">
   <link rel="alternate" type="application/rss+xml" title="Levis1 RSS" href="feed.xml">
   <link rel="manifest" href="site.webmanifest">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="stylesheet" href="styles.css?v=20260512-1420">
+  <link rel="stylesheet" href="styles.css?v=20260512-1515">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Blog",
-      "name": "Levis1",
+      "name": "Levis blog",
       "url": "https://koe662.github.io/blog/",
-      "description": "Levis1 的个人文章站，记录技术、思考、项目和日常写下的文字。",
+      "description": "Levis blog，按 Forensics、Crypto、RE 分类整理文章与记录。",
       "inLanguage": "zh-CN",
       "publisher": {
         "@type": "Person",
@@ -52,36 +52,41 @@
 
   <div class="site-shell">
     <header class="site-header reveal">
-      <a class="brand" href="index.html">Levis1</a>
+      <a class="brand" href="index.html">Levis blog</a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
         菜单
       </button>
       <nav id="site-nav" class="site-nav">
-        <a href="#writing">文章</a>
-        <a href="#about">关于</a>
+        <a href="#modules">Modules</a>
       </nav>
     </header>
 
     <main class="home-layout">
       <section class="home-copy reveal">
-        <p class="eyebrow">Levis1 Writing Archive</p>
-        <h1>这是我写给自己的文章站。</h1>
-        <p class="hero-text">
-          我是 Levis1。这里会放我自己写下的内容，不做投稿，不做聚合，只保留我真正想留下的文章和记录。
-        </p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#writing">查看文章</a>
-          <a class="button button-secondary" href="#about">关于我</a>
-        </div>
+        <p class="eyebrow">Archive</p>
+        <h1>Levis blog</h1>
 
-        <section id="writing" class="writing-block">
-          <p class="eyebrow">Published</p>
-          <div class="post-list">
-            <article class="post-item reveal">
-              <a class="post-link" href="posts/test.html">
-                <p class="post-meta">2026.05.12</p>
-                <h3>测试文档</h3>
-                <p>当前站点的第一篇测试文章，用来确认页面结构、样式和阅读体验。</p>
+        <section id="modules" class="writing-block">
+          <p class="eyebrow">Modules</p>
+          <div class="module-list">
+            <article class="module-item reveal">
+              <a class="module-link" href="posts/test.html">
+                <span class="module-name">Forensics</span>
+                <span class="module-desc">测试文档</span>
+              </a>
+            </article>
+
+            <article class="module-item reveal">
+              <a class="module-link" href="posts/test.html">
+                <span class="module-name">Crypto</span>
+                <span class="module-desc">测试文档</span>
+              </a>
+            </article>
+
+            <article class="module-item reveal">
+              <a class="module-link" href="posts/test.html">
+                <span class="module-name">RE</span>
+                <span class="module-desc">测试文档</span>
               </a>
             </article>
           </div>
@@ -90,10 +95,10 @@
 
       <aside class="home-figure reveal">
         <div class="floating-card">
-          <p class="floating-label">Current Focus</p>
-          <h2>写作、整理、发布。</h2>
+          <p class="floating-label">System Unit</p>
+          <h2>Observer / 01</h2>
           <p>
-            右侧这个区域会跟随鼠标做轻微位移，只保留少量气氛，不打断阅读。
+            右侧监视单元会随鼠标做细微响应，粒子和几何效果保持在可控范围内，优先稳定帧率。
           </p>
           <div class="unit-shell">
             <div class="unit-glow"></div>
@@ -103,6 +108,7 @@
               <div class="unit-horn horn-left"></div>
               <div class="unit-horn horn-right"></div>
               <div class="unit-crown"></div>
+              <div class="unit-headplate"></div>
               <div class="unit-core"></div>
               <div class="unit-visor">
                 <div class="unit-eye eye-left">
@@ -122,33 +128,20 @@
               <div class="unit-sensor sensor-right"></div>
               <div class="unit-neck"></div>
               <div class="unit-collar"></div>
+              <div class="unit-plate plate-left"></div>
+              <div class="unit-plate plate-right"></div>
             </div>
           </div>
-          <ul class="floating-list">
-            <li>白底为主</li>
-            <li>简约排版</li>
-            <li>细腻拖尾</li>
-          </ul>
         </div>
       </aside>
     </main>
 
-    <section id="about" class="section about-section reveal">
-      <p class="eyebrow">About</p>
-      <h2>关于我</h2>
-      <div class="about-copy">
-        <p>
-          我是 Levis1。这里现在先保留一个测试文档，后续会逐步替换成我自己的真实文章。
-        </p>
-      </div>
-    </section>
-
     <footer class="site-footer reveal">
       <p>© <span id="current-year"></span> Levis1</p>
-      <p>Written and maintained by Levis1.</p>
+      <p>Levis blog.</p>
     </footer>
   </div>
 
-  <script src="script.js?v=20260512-1420"></script>
+  <script src="script.js?v=20260512-1515"></script>
 </body>
 </html>

@@ -86,6 +86,9 @@ if (!reducedMotion.matches && unitEyes.length > 0) {
 if (!reducedMotion.matches && particleCanvas) {
   const context = particleCanvas.getContext("2d");
   const particles = [];
+  let pointerFrame = 0;
+  let latestPointerX = 0;
+  let latestPointerY = 0;
 
   const resizeCanvas = () => {
     particleCanvas.width = window.innerWidth;
@@ -96,16 +99,16 @@ if (!reducedMotion.matches && particleCanvas) {
     particles.push({
       x,
       y,
-      vx: (Math.random() - 0.5) * 1.2,
-      vy: (Math.random() - 0.5) * 1.2 - 0.4,
-      size: 1.2 + Math.random() * 2.2,
+      vx: (Math.random() - 0.5) * 0.95,
+      vy: (Math.random() - 0.5) * 0.95 - 0.32,
+      size: 0.9 + Math.random() * 1.7,
       life: 1,
-      decay: 0.015 + Math.random() * 0.02,
+      decay: 0.018 + Math.random() * 0.018,
       hue: Math.random() > 0.5 ? "138, 165, 255" : "255, 216, 234",
       kind: Math.random() > 0.66 ? "hex" : (Math.random() > 0.5 ? "line" : "diamond")
     });
 
-    if (particles.length > 90) {
+    if (particles.length > 64) {
       particles.shift();
     }
   };
@@ -122,8 +125,8 @@ if (!reducedMotion.matches && particleCanvas) {
       particle.x += particle.vx;
       particle.y += particle.vy;
       particle.life -= particle.decay;
-      particle.vx *= 0.985;
-      particle.vy *= 0.985;
+      particle.vx *= 0.988;
+      particle.vy *= 0.988;
 
       if (particle.life <= 0) {
         particles.splice(index, 1);
@@ -175,12 +178,29 @@ if (!reducedMotion.matches && particleCanvas) {
 
   window.addEventListener("resize", resizeCanvas);
   window.addEventListener("pointermove", (event) => {
-    spawnParticle(event.clientX, event.clientY);
-    spawnParticle(event.clientX + (Math.random() - 0.5) * 12, event.clientY + (Math.random() - 0.5) * 12);
-    spawnParticle(event.clientX + (Math.random() - 0.5) * 18, event.clientY + (Math.random() - 0.5) * 18);
-    if (Math.random() > 0.15) {
-      spawnParticle(event.clientX + (Math.random() - 0.5) * 22, event.clientY + (Math.random() - 0.5) * 22);
+    latestPointerX = event.clientX;
+    latestPointerY = event.clientY;
+
+    if (pointerFrame) {
+      return;
     }
+
+    pointerFrame = window.requestAnimationFrame(() => {
+      spawnParticle(latestPointerX, latestPointerY);
+      spawnParticle(
+        latestPointerX + (Math.random() - 0.5) * 10,
+        latestPointerY + (Math.random() - 0.5) * 10
+      );
+
+      if (Math.random() > 0.38) {
+        spawnParticle(
+          latestPointerX + (Math.random() - 0.5) * 16,
+          latestPointerY + (Math.random() - 0.5) * 16
+        );
+      }
+
+      pointerFrame = 0;
+    });
   });
 
   resizeCanvas();
