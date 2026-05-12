@@ -4,10 +4,8 @@ const siteNav = document.querySelector(".site-nav");
 const revealItems = document.querySelectorAll(".reveal");
 const parallaxItems = document.querySelectorAll(".home-copy");
 const reactiveCard = document.querySelector(".floating-card");
-const cursorAura = document.querySelector(".cursor-aura");
-const cursorTrail = document.querySelector(".cursor-trail");
 const particleCanvas = document.querySelector(".particle-canvas");
-const petEyes = document.querySelectorAll(".pet-eye");
+const unitEyes = document.querySelectorAll(".unit-eye");
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 if (yearTarget) {
@@ -57,10 +55,10 @@ if (!reducedMotion.matches && parallaxItems.length > 0) {
   });
 }
 
-if (!reducedMotion.matches && petEyes.length > 0) {
+if (!reducedMotion.matches && unitEyes.length > 0) {
   const moveEyes = (clientX, clientY) => {
-    petEyes.forEach((eye) => {
-      const pupil = eye.querySelector(".pet-pupil");
+    unitEyes.forEach((eye) => {
+      const pupil = eye.querySelector(".unit-pupil");
       if (!pupil) {
         return;
       }
@@ -85,41 +83,6 @@ if (!reducedMotion.matches && petEyes.length > 0) {
   });
 }
 
-if (!reducedMotion.matches && cursorAura && cursorTrail) {
-  let auraX = window.innerWidth / 2;
-  let auraY = window.innerHeight / 2;
-  let trailX = auraX;
-  let trailY = auraY;
-  let targetX = auraX;
-  let targetY = auraY;
-
-  const renderCursor = () => {
-    auraX += (targetX - auraX) * 0.1;
-    auraY += (targetY - auraY) * 0.1;
-    trailX += (targetX - trailX) * 0.22;
-    trailY += (targetY - trailY) * 0.22;
-
-    cursorAura.style.transform = `translate3d(${auraX}px, ${auraY}px, 0) translate(-50%, -50%)`;
-    cursorTrail.style.transform = `translate3d(${trailX}px, ${trailY}px, 0) translate(-50%, -50%)`;
-
-    window.requestAnimationFrame(renderCursor);
-  };
-
-  window.addEventListener("pointermove", (event) => {
-    targetX = event.clientX;
-    targetY = event.clientY;
-    cursorAura.style.opacity = "1";
-    cursorTrail.style.opacity = "1";
-  });
-
-  window.addEventListener("pointerleave", () => {
-    cursorAura.style.opacity = "0";
-    cursorTrail.style.opacity = "0";
-  });
-
-  renderCursor();
-}
-
 if (!reducedMotion.matches && particleCanvas) {
   const context = particleCanvas.getContext("2d");
   const particles = [];
@@ -138,7 +101,8 @@ if (!reducedMotion.matches && particleCanvas) {
       size: 1.2 + Math.random() * 2.2,
       life: 1,
       decay: 0.015 + Math.random() * 0.02,
-      hue: Math.random() > 0.5 ? "138, 165, 255" : "255, 216, 234"
+      hue: Math.random() > 0.5 ? "138, 165, 255" : "255, 216, 234",
+      kind: Math.random() > 0.66 ? "hex" : (Math.random() > 0.5 ? "line" : "diamond")
     });
 
     if (particles.length > 90) {
@@ -170,13 +134,39 @@ if (!reducedMotion.matches && particleCanvas) {
       context.translate(particle.x, particle.y);
       context.rotate((particle.life * 6) + particle.size);
       context.fillStyle = `rgba(${particle.hue}, ${particle.life * 0.65})`;
-      context.beginPath();
-      context.moveTo(0, -particle.size * 1.8);
-      context.lineTo(particle.size * 0.9, 0);
-      context.lineTo(0, particle.size * 1.8);
-      context.lineTo(-particle.size * 0.9, 0);
-      context.closePath();
-      context.fill();
+      context.strokeStyle = `rgba(${particle.hue}, ${particle.life * 0.5})`;
+
+      if (particle.kind === "hex") {
+        const radius = particle.size * 1.35;
+        context.beginPath();
+        for (let side = 0; side < 6; side += 1) {
+          const angle = (Math.PI / 3) * side;
+          const x = Math.cos(angle) * radius;
+          const y = Math.sin(angle) * radius;
+          if (side === 0) {
+            context.moveTo(x, y);
+          } else {
+            context.lineTo(x, y);
+          }
+        }
+        context.closePath();
+        context.stroke();
+      } else if (particle.kind === "line") {
+        context.lineWidth = Math.max(0.8, particle.size * 0.4);
+        context.beginPath();
+        context.moveTo(-particle.size * 2.2, 0);
+        context.lineTo(particle.size * 2.2, 0);
+        context.stroke();
+      } else {
+        context.beginPath();
+        context.moveTo(0, -particle.size * 1.8);
+        context.lineTo(particle.size * 0.9, 0);
+        context.lineTo(0, particle.size * 1.8);
+        context.lineTo(-particle.size * 0.9, 0);
+        context.closePath();
+        context.fill();
+      }
+
       context.restore();
     }
 
@@ -187,6 +177,7 @@ if (!reducedMotion.matches && particleCanvas) {
   window.addEventListener("pointermove", (event) => {
     spawnParticle(event.clientX, event.clientY);
     spawnParticle(event.clientX + (Math.random() - 0.5) * 12, event.clientY + (Math.random() - 0.5) * 12);
+    spawnParticle(event.clientX + (Math.random() - 0.5) * 18, event.clientY + (Math.random() - 0.5) * 18);
     if (Math.random() > 0.15) {
       spawnParticle(event.clientX + (Math.random() - 0.5) * 22, event.clientY + (Math.random() - 0.5) * 22);
     }
