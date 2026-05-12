@@ -5,7 +5,7 @@ const revealItems = document.querySelectorAll(".reveal");
 const parallaxItems = document.querySelectorAll(".home-copy");
 const reactiveCard = document.querySelector(".floating-card");
 const particleCanvas = document.querySelector(".particle-canvas");
-const unitEyes = document.querySelectorAll(".unit-eye");
+const characterEyes = document.querySelectorAll(".character-eye");
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 if (yearTarget) {
@@ -55,14 +55,9 @@ if (!reducedMotion.matches && parallaxItems.length > 0) {
   });
 }
 
-if (!reducedMotion.matches && unitEyes.length > 0) {
+if (!reducedMotion.matches && characterEyes.length > 0) {
   const moveEyes = (clientX, clientY) => {
-    unitEyes.forEach((eye) => {
-      const pupil = eye.querySelector(".unit-pupil");
-      if (!pupil) {
-        return;
-      }
-
+    characterEyes.forEach((eye) => {
       const rect = eye.getBoundingClientRect();
       const centerX = rect.left + rect.width / 2;
       const centerY = rect.top + rect.height / 2;
@@ -73,8 +68,7 @@ if (!reducedMotion.matches && unitEyes.length > 0) {
       const offsetX = Math.cos(angle) * distance;
       const offsetY = Math.sin(angle) * distance;
 
-      pupil.style.transform =
-        `translate(calc(-50% + ${offsetX}px), calc(-50% + ${offsetY}px))`;
+      eye.setAttribute("transform", `translate(${offsetX} ${offsetY})`);
     });
   };
 

@@ -44,10 +44,17 @@
   <div class="geo-layer" aria-hidden="true">
     <span class="geo-orbit orbit-a"></span>
     <span class="geo-orbit orbit-b"></span>
+    <span class="geo-orbit orbit-c"></span>
     <span class="geo-diamond diamond-a"></span>
     <span class="geo-diamond diamond-b"></span>
+    <span class="geo-diamond diamond-c"></span>
     <span class="geo-line line-a"></span>
     <span class="geo-line line-b"></span>
+    <span class="geo-line line-c"></span>
+    <span class="geo-grid grid-a"></span>
+    <span class="geo-grid grid-b"></span>
+    <span class="geo-hex hex-a"></span>
+    <span class="geo-hex hex-b"></span>
   </div>
 
   <div class="site-shell">
@@ -95,42 +102,94 @@
 
       <aside class="home-figure reveal">
         <div class="floating-card">
-          <p class="floating-label">System Unit</p>
-          <h2>Observer / 01</h2>
-          <p>
-            右侧监视单元会随鼠标做细微响应，粒子和几何效果保持在可控范围内，优先稳定帧率。
-          </p>
-          <div class="unit-shell">
-            <div class="unit-glow"></div>
-            <div class="unit-frame">
-              <div class="unit-wing wing-left"></div>
-              <div class="unit-wing wing-right"></div>
-              <div class="unit-horn horn-left"></div>
-              <div class="unit-horn horn-right"></div>
-              <div class="unit-crown"></div>
-              <div class="unit-headplate"></div>
-              <div class="unit-core"></div>
-              <div class="unit-visor">
-                <div class="unit-eye eye-left">
-                  <span class="unit-pupil"></span>
-                </div>
-                <div class="unit-eye eye-right">
-                  <span class="unit-pupil"></span>
-                </div>
-              </div>
-              <div class="unit-cheek cheek-left"></div>
-              <div class="unit-cheek cheek-right"></div>
-              <div class="unit-jaw"></div>
-              <div class="unit-chin"></div>
-              <div class="unit-vent vent-left"></div>
-              <div class="unit-vent vent-right"></div>
-              <div class="unit-sensor sensor-left"></div>
-              <div class="unit-sensor sensor-right"></div>
-              <div class="unit-neck"></div>
-              <div class="unit-collar"></div>
-              <div class="unit-plate plate-left"></div>
-              <div class="unit-plate plate-right"></div>
-            </div>
+          <p class="floating-label">Display</p>
+          <div class="character-shell">
+            <div class="character-glow"></div>
+            <svg class="character-figure" viewBox="0 0 360 760" aria-hidden="true">
+              <defs>
+                <linearGradient id="suitWhite" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#ffffff"/>
+                  <stop offset="100%" stop-color="#ece9f8"/>
+                </linearGradient>
+                <linearGradient id="suitPurple" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#8d67c7"/>
+                  <stop offset="100%" stop-color="#5c3d97"/>
+                </linearGradient>
+                <linearGradient id="suitDark" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#25253a"/>
+                  <stop offset="100%" stop-color="#121320"/>
+                </linearGradient>
+                <linearGradient id="accentGreen" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#a6ff4f"/>
+                  <stop offset="100%" stop-color="#58c614"/>
+                </linearGradient>
+              </defs>
+
+              <g class="character-hair">
+                <path d="M131 82c11-28 41-47 74-44 26 2 51 19 63 42l-12 12-2 21-17-19-13 22-17-22-12 20-18-19-13 21-12-14-14 18-6-26z" fill="#6d43ae"/>
+                <path d="M149 59c18-18 47-28 72-24 17 2 32 10 46 24l-18-2 14 13-19-3 13 16-18-4 10 20-19-10-6 20-13-16-10 16-8-17-15 13 4-20-16 9 8-19-17 5 10-18-16 4 12-15-15 2z" fill="#7e57c2"/>
+              </g>
+
+              <g class="character-head">
+                <ellipse cx="184" cy="118" rx="40" ry="48" fill="#ffe9da"/>
+                <path d="M169 106c9-8 20-8 29 0" stroke="#25253a" stroke-width="3" fill="none" stroke-linecap="round"/>
+                <path d="M152 106c8-7 18-8 28-2" stroke="#25253a" stroke-width="3" fill="none" stroke-linecap="round"/>
+                <ellipse cx="165" cy="121" rx="10" ry="8" fill="#c7ff62"/>
+                <ellipse cx="202" cy="121" rx="10" ry="8" fill="#c7ff62"/>
+                <circle class="character-eye eye-left" cx="165" cy="121" r="3.8" fill="#15161f"/>
+                <circle class="character-eye eye-right" cx="202" cy="121" r="3.8" fill="#15161f"/>
+                <path d="M181 130l-4 12h8z" fill="#f3cdb6"/>
+                <path d="M173 150c7 4 14 4 21 0" stroke="#9c6d76" stroke-width="2" fill="none" stroke-linecap="round"/>
+              </g>
+
+              <g class="character-body">
+                <path d="M152 168c20-13 43-13 64 0l10 48-5 103 15 210-27 177h-50l-25-177 8-210-6-103z" fill="url(#suitWhite)"/>
+                <path d="M152 168c-13 3-28 12-36 31l-11 95-5 95-14 164 20 5 22-148 14-86 5-104 14-44z" fill="url(#suitDark)"/>
+                <path d="M216 168c13 3 28 12 36 31l11 95 5 95 14 164-20 5-22-148-14-86-5-104-14-44z" fill="url(#suitDark)"/>
+                <path d="M160 173l-13 36 11 64 22 26 20-26 10-64-12-36z" fill="#f7f4ff" opacity="0.65"/>
+                <path d="M161 166l-25 20 7 37 17 17 8-31-4-26z" fill="url(#suitPurple)"/>
+                <path d="M208 166l24 20-7 37-17 17-8-31 3-26z" fill="url(#suitPurple)"/>
+                <path d="M167 278l-22 36 16 28 23-34z" fill="url(#suitPurple)"/>
+                <path d="M201 278l22 36-16 28-23-34z" fill="url(#suitPurple)"/>
+                <path d="M177 214h14l6 34-13 22-14-22z" fill="url(#accentGreen)"/>
+                <path d="M170 151h27v24h-27z" fill="url(#suitDark)"/>
+                <path d="M177 165h14l5 10h-24z" fill="url(#accentGreen)"/>
+              </g>
+
+              <g class="character-arms">
+                <path d="M113 196c-14 16-18 33-18 58v109l20 6 13-110c2-16 8-33 16-49z" fill="url(#suitWhite)"/>
+                <path d="M254 196c14 16 18 33 18 58v109l-20 6-13-110c-2-16-8-33-16-49z" fill="url(#suitWhite)"/>
+                <path d="M94 361l18 5-5 84-20-6z" fill="url(#suitDark)"/>
+                <path d="M273 361l-18 5 5 84 20-6z" fill="url(#suitDark)"/>
+                <path d="M88 444l24 8-10 78-23-8z" fill="#f5efff"/>
+                <path d="M249 370l22-7 20 44-19 8c-9 3-19-1-23-10z" fill="#f5efff"/>
+                <path d="M100 227l16 8-3 42-17-8z" fill="url(#accentGreen)"/>
+                <path d="M252 227l16 8-3 42-17-8z" fill="url(#accentGreen)"/>
+              </g>
+
+              <g class="character-hips-legs">
+                <path d="M152 381l-18 146-8 183h37l16-178 5-151z" fill="url(#suitWhite)"/>
+                <path d="M215 381l18 146 8 183h-37l-16-178-5-151z" fill="url(#suitWhite)"/>
+                <path d="M134 530l-17 178 15 6 18-170z" fill="url(#suitDark)"/>
+                <path d="M233 530l17 178-15 6-18-170z" fill="url(#suitDark)"/>
+                <path d="M149 430l-22 58 16 18 24-62z" fill="url(#suitPurple)"/>
+                <path d="M219 430l22 58-16 18-24-62z" fill="url(#suitPurple)"/>
+                <path d="M143 650h34l5 56h-58z" fill="#f5f0ff"/>
+                <path d="M225 650h-34l-5 56h58z" fill="#f5f0ff"/>
+                <path d="M123 704h59l-4 10h-61z" fill="url(#accentGreen)"/>
+                <path d="M186 704h59l-4 10h-61z" fill="url(#accentGreen)"/>
+              </g>
+
+              <g class="character-lines" stroke="#25253a" stroke-width="2.2" fill="none" opacity="0.86">
+                <path d="M152 168c20-13 43-13 64 0"/>
+                <path d="M170 151h27"/>
+                <path d="M184 167v540"/>
+                <path d="M145 314c22 10 52 10 78 0"/>
+                <path d="M152 381c20 12 44 12 63 0"/>
+                <path d="M143 650h40"/>
+                <path d="M185 650h40"/>
+              </g>
+            </svg>
           </div>
         </div>
       </aside>
