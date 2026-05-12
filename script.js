@@ -3,6 +3,8 @@ const menuToggle = document.querySelector(".menu-toggle");
 const siteNav = document.querySelector(".site-nav");
 const revealItems = document.querySelectorAll(".reveal");
 const parallaxItems = document.querySelectorAll(".hero");
+const cursorAura = document.querySelector(".cursor-aura");
+const cursorTrail = document.querySelector(".cursor-trail");
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 if (yearTarget) {
@@ -40,6 +42,41 @@ if (!reducedMotion.matches && parallaxItems.length > 0) {
       frame = 0;
     });
   });
+}
+
+if (!reducedMotion.matches && cursorAura && cursorTrail) {
+  let auraX = window.innerWidth / 2;
+  let auraY = window.innerHeight / 2;
+  let trailX = auraX;
+  let trailY = auraY;
+  let targetX = auraX;
+  let targetY = auraY;
+
+  const renderCursor = () => {
+    auraX += (targetX - auraX) * 0.12;
+    auraY += (targetY - auraY) * 0.12;
+    trailX += (targetX - trailX) * 0.24;
+    trailY += (targetY - trailY) * 0.24;
+
+    cursorAura.style.transform = `translate3d(${auraX}px, ${auraY}px, 0) translate(-50%, -50%)`;
+    cursorTrail.style.transform = `translate3d(${trailX}px, ${trailY}px, 0) translate(-50%, -50%)`;
+
+    window.requestAnimationFrame(renderCursor);
+  };
+
+  window.addEventListener("pointermove", (event) => {
+    targetX = event.clientX;
+    targetY = event.clientY;
+    cursorAura.style.opacity = "1";
+    cursorTrail.style.opacity = "1";
+  });
+
+  window.addEventListener("pointerleave", () => {
+    cursorAura.style.opacity = "0";
+    cursorTrail.style.opacity = "0";
+  });
+
+  renderCursor();
 }
 
 if ("IntersectionObserver" in window) {
