@@ -23,7 +23,7 @@
   <link rel="alternate" type="application/rss+xml" title="Levis1 RSS" href="feed.xml">
   <link rel="manifest" href="site.webmanifest">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="stylesheet" href="styles.css?v=20260512-1145">
+  <link rel="stylesheet" href="styles.css?v=20260512-1235">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -42,6 +42,8 @@
 <body>
   <div class="cursor-aura" aria-hidden="true"></div>
   <div class="cursor-trail" aria-hidden="true"></div>
+  <canvas class="particle-canvas" aria-hidden="true"></canvas>
+
   <div class="site-shell">
     <header class="site-header reveal">
       <a class="brand" href="index.html">Levis1</a>
@@ -50,86 +52,61 @@
       </button>
       <nav id="site-nav" class="site-nav">
         <a href="#writing">文章</a>
-        <a href="#notes">笔记</a>
         <a href="#about">关于</a>
       </nav>
     </header>
 
-    <main>
-      <section class="hero reveal">
+    <main class="home-layout">
+      <section class="home-copy reveal">
         <p class="eyebrow">Levis1 Writing Archive</p>
-        <h1>写下我想留下的内容，也写下我自己。</h1>
+        <h1>这是我写给自己的文章站。</h1>
         <p class="hero-text">
-          我是 Levis1。这里是我的个人文章站，用来放我自己写的技术记录、项目思考、日常随笔和一些带有个人气味的内容。
+          我是 Levis1。这里会放我自己写下的内容，不做投稿，不做聚合，只保留我真正想留下的文章和记录。
         </p>
-        <div class="hero-tags reveal">
-          <span>技术</span>
-          <span>项目</span>
-          <span>随笔</span>
-          <span>记录</span>
-        </div>
         <div class="hero-actions">
-          <a class="button button-primary" href="#writing">开始阅读</a>
-          <a class="button button-secondary" href="#about">了解我</a>
+          <a class="button button-primary" href="#writing">查看文章</a>
+          <a class="button button-secondary" href="#about">关于我</a>
         </div>
+
+        <section id="writing" class="writing-block">
+          <p class="eyebrow">Published</p>
+          <div class="post-list">
+            <article class="post-item reveal">
+              <a class="post-link" href="posts/test.html">
+                <p class="post-meta">2026.05.12</p>
+                <h3>测试文档</h3>
+                <p>当前站点的第一篇测试文章，用来确认页面结构、样式和阅读体验。</p>
+              </a>
+            </article>
+          </div>
+        </section>
       </section>
 
-      <section id="writing" class="section writing-section">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Writing</p>
-          <h2>最近写的</h2>
-        </div>
-        <div class="post-list">
-          <article class="post-item reveal">
-            <a class="post-link" href="posts/get-indexed.html">
-              <p class="post-meta">2026.05.12</p>
-              <h3>博客上线后，怎样才能被搜索引擎收录</h3>
-              <p>从公开部署、站点地图到搜索平台提交，梳理一个个人站点被真正搜到之前要走完的步骤。</p>
-            </a>
-          </article>
-
-          <article class="post-item reveal">
-            <a class="post-link" href="posts/static-stack.html">
-              <p class="post-meta">2026.05.10</p>
-              <h3>为什么我先做的是静态博客，而不是复杂后台</h3>
-              <p>对于个人写作来说，稳定发布、快速访问和低维护成本，通常比功能堆叠更重要。</p>
-            </a>
-          </article>
-
-          <article class="post-item reveal">
-            <a class="post-link" href="posts/reading-experience.html">
-              <p class="post-meta">2026.05.08</p>
-              <h3>博客页面应该优先服务阅读，而不是展示组件</h3>
-              <p>排版、节奏和留白，决定了一个内容站最终有没有作者自己的气质。</p>
-            </a>
-          </article>
-        </div>
-      </section>
-
-      <section id="notes" class="section notes-section">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Notes</p>
-          <h2>近况</h2>
-        </div>
-        <div class="notes-list">
-          <p class="note-line reveal"><span>05.12</span> 这里会逐步换成我自己真正写过的文章，而不是模板内容。</p>
-          <p class="note-line reveal"><span>05.12</span> 视觉会保持简约，以白底和轻量动态为主。</p>
-          <p class="note-line reveal"><span>05.12</span> 动画只作为气氛和节奏，不盖过文字本身。</p>
-        </div>
-      </section>
-
-      <section id="about" class="section about-section">
-        <div class="section-heading reveal">
-          <p class="eyebrow">About</p>
-          <h2>关于我</h2>
-        </div>
-        <div class="about-copy reveal">
+      <aside class="home-figure reveal">
+        <div class="floating-card">
+          <p class="floating-label">Current Focus</p>
+          <h2>写作、整理、发布。</h2>
           <p>
-            我是 Levis1，这里是我长期写作和整理想法的地方。之后这个站会逐步替换成我自己的技术文章、项目记录和个人表达。
+            右侧这个区域会跟随鼠标做轻微位移，只保留少量气氛，不打断阅读。
           </p>
+          <ul class="floating-list">
+            <li>白底为主</li>
+            <li>简约排版</li>
+            <li>细腻拖尾</li>
+          </ul>
         </div>
-      </section>
+      </aside>
     </main>
+
+    <section id="about" class="section about-section reveal">
+      <p class="eyebrow">About</p>
+      <h2>关于我</h2>
+      <div class="about-copy">
+        <p>
+          我是 Levis1。这里现在先保留一个测试文档，后续会逐步替换成我自己的真实文章。
+        </p>
+      </div>
+    </section>
 
     <footer class="site-footer reveal">
       <p>© <span id="current-year"></span> Levis1</p>
@@ -137,6 +114,6 @@
     </footer>
   </div>
 
-  <script src="script.js?v=20260512-1145"></script>
+  <script src="script.js?v=20260512-1235"></script>
 </body>
 </html>

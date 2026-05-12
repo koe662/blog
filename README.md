@@ -22,9 +22,7 @@
 需要替换的位置包括：
 
 - `index.html`
-- `posts/get-indexed.html`
-- `posts/static-stack.html`
-- `posts/reading-experience.html`
+- `posts/test.html`
 - `robots.txt`
 - `sitemap.xml`
 - `feed.xml`
