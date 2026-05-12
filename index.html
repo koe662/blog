@@ -3,34 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Levis1 | 技术、写作与设计记录</title>
-  <meta name="description" content="Levis1 的个人博客，记录技术、写作、设计想法和项目过程。">
+  <title>Levis1 | 文章与记录</title>
+  <meta name="description" content="Levis1 的个人写作站，记录技术、思考、项目和日常写下的文章。">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Levis1">
-  <meta name="theme-color" content="#f3efe7">
+  <meta name="theme-color" content="#0d0d0d">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Levis1 | 技术、写作与设计记录">
-  <meta property="og:description" content="Levis1 的个人博客，记录技术、写作、设计想法和项目过程。">
+  <meta property="og:title" content="Levis1 | 文章与记录">
+  <meta property="og:description" content="Levis1 的个人写作站，记录技术、思考、项目和日常写下的文章。">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Levis1">
   <meta property="og:url" content="https://koe662.github.io/blog/">
   <meta property="og:image" content="https://koe662.github.io/blog/assets/og-cover.svg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Levis1 | 技术、写作与设计记录">
-  <meta name="twitter:description" content="Levis1 的个人博客，记录技术、写作、设计想法和项目过程。">
+  <meta name="twitter:title" content="Levis1 | 文章与记录">
+  <meta name="twitter:description" content="Levis1 的个人写作站，记录技术、思考、项目和日常写下的文章。">
   <meta name="twitter:image" content="https://koe662.github.io/blog/assets/og-cover.svg">
   <link rel="canonical" href="https://koe662.github.io/blog/">
   <link rel="alternate" type="application/rss+xml" title="Levis1 RSS" href="feed.xml">
   <link rel="manifest" href="site.webmanifest">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="stylesheet" href="styles.css?v=20260512-0916">
+  <link rel="stylesheet" href="styles.css?v=20260512-1030">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Blog",
       "name": "Levis1",
       "url": "https://koe662.github.io/blog/",
-      "description": "Levis1 的个人博客，记录技术、写作、设计想法和项目过程。",
+      "description": "Levis1 的个人写作站，记录技术、思考、项目和日常写下的文章。",
       "inLanguage": "zh-CN",
       "publisher": {
         "@type": "Person",
@@ -41,73 +41,59 @@
 </head>
 <body>
   <div class="site-shell">
-    <header class="site-header">
+    <header class="site-header reveal">
       <a class="brand" href="index.html">Levis1</a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
         菜单
       </button>
       <nav id="site-nav" class="site-nav">
-        <a href="#posts">文章</a>
+        <a href="#writing">文章</a>
         <a href="#notes">笔记</a>
         <a href="#about">关于</a>
       </nav>
     </header>
 
     <main>
-      <section class="hero">
-        <div class="hero-copy reveal">
-          <p class="eyebrow">Public Blog Starter</p>
-          <h1>这是一个可以真正上线的博客起点。</h1>
-          <p class="hero-text">
-            这里是 Levis1 的个人博客，面向公开访问，适合持续发布技术文章、随笔和项目记录。你可以通过 GitHub Pages 持续更新它，并让别人通过搜索引擎找到你。
-          </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#posts">查看文章</a>
-            <a class="button button-secondary" href="posts/get-indexed.html">先看收录说明</a>
-          </div>
+      <section class="hero reveal">
+        <p class="eyebrow">Personal Writing Site</p>
+        <h1>我在这里写文章，记录我真正关心的东西。</h1>
+        <p class="hero-text">
+          我是 Levis1。这里不是投稿站，也不是内容集合页，而是我自己的个人写作空间。技术、项目、思考和零散的记录，都会留在这里。
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#writing">开始阅读</a>
+          <a class="button button-secondary" href="#about">了解我</a>
         </div>
-        <aside class="hero-panel reveal">
-          <p class="panel-label">上线条件</p>
-          <ul class="status-list">
-            <li>公开域名或托管地址</li>
-            <li>站点地图与 robots</li>
-            <li>持续更新的原创内容</li>
-          </ul>
-          <p class="panel-footnote">当前已按 GitHub Pages 项目地址配置，可直接部署到 `koe662.github.io/blog/`。</p>
-        </aside>
       </section>
 
-      <section id="posts" class="section">
+      <section id="writing" class="section writing-section">
         <div class="section-heading reveal">
-          <p class="eyebrow">Recent Posts</p>
-          <h2>近期文章</h2>
+          <p class="eyebrow">Writing</p>
+          <h2>最近写的</h2>
         </div>
-        <div class="post-grid">
-          <article class="post-card reveal">
-            <p class="post-meta">2026.05.12 · 部署 / SEO</p>
-            <h3><a href="posts/get-indexed.html">博客上线后，怎样才能被搜索引擎收录</a></h3>
-            <p>
-              公开访问、站点地图、搜索平台验证、内容质量和收录等待周期，这几个环节缺一不可。
-            </p>
-            <a class="text-link" href="posts/get-indexed.html">继续阅读</a>
+        <div class="post-list">
+          <article class="post-item reveal">
+            <a class="post-link" href="posts/get-indexed.html">
+              <p class="post-meta">2026.05.12</p>
+              <h3>博客上线后，怎样才能被搜索引擎收录</h3>
+              <p>从公开部署、站点地图到搜索平台提交，梳理一个个人站点被真正搜到之前要走完的步骤。</p>
+            </a>
           </article>
 
-          <article class="post-card reveal">
-            <p class="post-meta">2026.05.10 · 前端 / 架构</p>
-            <h3><a href="posts/static-stack.html">为什么我先给你做的是静态博客，而不是复杂后台</a></h3>
-            <p>
-              对个人博客来说，最先要解决的是发布与部署成本，而不是功能堆叠。静态结构更适合起步。
-            </p>
-            <a class="text-link" href="posts/static-stack.html">继续阅读</a>
+          <article class="post-item reveal">
+            <a class="post-link" href="posts/static-stack.html">
+              <p class="post-meta">2026.05.10</p>
+              <h3>为什么我先做的是静态博客，而不是复杂后台</h3>
+              <p>对于个人写作来说，稳定发布、快速访问和低维护成本，通常比功能堆叠更重要。</p>
+            </a>
           </article>
 
-          <article class="post-card reveal">
-            <p class="post-meta">2026.05.08 · 设计 / 写作</p>
-            <h3><a href="posts/reading-experience.html">博客页面应该优先服务阅读，而不是展示组件</a></h3>
-            <p>
-              留白、标题、正文宽度和配色，会直接影响读者是否愿意停下来把文章看完。
-            </p>
-            <a class="text-link" href="posts/reading-experience.html">继续阅读</a>
+          <article class="post-item reveal">
+            <a class="post-link" href="posts/reading-experience.html">
+              <p class="post-meta">2026.05.08</p>
+              <h3>博客页面应该优先服务阅读，而不是展示组件</h3>
+              <p>排版、节奏和留白，决定了一个内容站最终有没有作者自己的气质。</p>
+            </a>
           </article>
         </div>
       </section>
@@ -115,48 +101,34 @@
       <section id="notes" class="section notes-section">
         <div class="section-heading reveal">
           <p class="eyebrow">Notes</p>
-          <h2>站点笔记</h2>
+          <h2>近况</h2>
         </div>
-        <div class="notes-timeline">
-          <article class="note-item reveal">
-            <span class="note-date">05.12</span>
-            <p>已加入 `robots.txt`、`sitemap.xml`、RSS 和结构化数据，便于搜索引擎抓取。</p>
-          </article>
-          <article class="note-item reveal">
-            <span class="note-date">05.12</span>
-            <p>所有页面都补了 `title`、`description`、`canonical` 和 Open Graph 标签。</p>
-          </article>
-          <article class="note-item reveal">
-            <span class="note-date">05.12</span>
-            <p>如果你接下来绑定自定义域名并提交站点地图，这个博客就进入可收录状态。</p>
-          </article>
+        <div class="notes-list">
+          <p class="note-line reveal"><span>05.12</span> 这个站点会持续替换成我自己的文章，而不是保留模板示例。</p>
+          <p class="note-line reveal"><span>05.12</span> 视觉改成黑白基调，尽量让页面只服务文字本身。</p>
+          <p class="note-line reveal"><span>05.12</span> 动效会保留，但只做克制的层次和节奏，不做花哨装饰。</p>
         </div>
       </section>
 
       <section id="about" class="section about-section">
         <div class="section-heading reveal">
           <p class="eyebrow">About</p>
-          <h2>这套博客现在能做什么</h2>
+          <h2>关于我</h2>
         </div>
-        <div class="about-grid">
-          <div class="about-card reveal">
-            <h3>可部署</h3>
-            <p>它是纯静态站，没有构建依赖，上传到任何静态托管服务都能直接访问。</p>
-          </div>
-          <div class="about-card reveal">
-            <h3>可被搜索</h3>
-            <p>它已经具备被搜索引擎理解和抓取的基础条件，但还需要你替换域名并正式发布到公网。</p>
-          </div>
+        <div class="about-copy reveal">
+          <p>
+            我是 Levis1，这里是我长期写作和整理想法的地方。之后这个站会逐步替换成我自己的技术文章、项目记录和个人表达。
+          </p>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer reveal">
       <p>© <span id="current-year"></span> Levis1</p>
-      <p>Static site ready for public deployment.</p>
+      <p>Written and maintained by Levis1.</p>
     </footer>
   </div>
 
-  <script src="script.js?v=20260512-0916"></script>
+  <script src="script.js?v=20260512-1030"></script>
 </body>
 </html>
