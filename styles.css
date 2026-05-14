@@ -738,7 +738,7 @@ a {
   transform: translateY(0);
 }
 
-html.motion-ready .reveal {
+html.motion-ready .reveal:not(.is-visible) {
   opacity: 0;
   transform: translateY(18px);
   transition:
