@@ -8,6 +8,8 @@ const particleCanvas = document.querySelector(".particle-canvas");
 const eyeOverlays = document.querySelectorAll(".character-eye-overlay");
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
+document.documentElement.classList.add("motion-ready");
+
 if (yearTarget) {
   yearTarget.textContent = String(new Date().getFullYear());
 }
