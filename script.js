@@ -7,6 +7,7 @@ const reactiveCard = document.querySelector(".floating-card");
 const particleCanvas = document.querySelector(".particle-canvas");
 const eyeOverlays = document.querySelectorAll(".character-eye-overlay");
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const pageEnterItems = document.querySelectorAll("[data-page-enter]");
 
 document.documentElement.classList.add("motion-ready");
 
@@ -234,4 +235,18 @@ if ("IntersectionObserver" in window) {
   revealItems.forEach((item) => observer.observe(item));
 } else {
   revealItems.forEach((item) => item.classList.add("is-visible"));
+}
+
+if (!reducedMotion.matches && pageEnterItems.length > 0) {
+  window.requestAnimationFrame(() => {
+    pageEnterItems.forEach((item, index) => {
+      const delay = item.getAttribute("data-page-enter-delay") || `${index * 90}`;
+      item.style.animationDelay = `${delay}ms`;
+      item.classList.add("page-enter");
+
+      if (item.hasAttribute("data-page-enter-soft")) {
+        item.classList.add("page-enter-soft");
+      }
+    });
+  });
 }
